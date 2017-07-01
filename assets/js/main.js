@@ -6,6 +6,7 @@ $(document).ready(function(){
 		var name = $("#name").val();
 		var lastName = $("#lastname").val();
 		var email = $("#input-email").val();
+		var pass = $("#input-password").val();
 
 			//validación nombre
 			if(!/^([a-zñáéíóú]{1,11})+$/.test(name)){
@@ -19,6 +20,10 @@ $(document).ready(function(){
 			if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)){
 				$(".email-container").append("<span>Verifique su email</span>");
 			}
+			//validación contraseña
+			if(pass.length <= 6 || pass === "123456" || pass === "098765" || pass === "password"){
+				$(".password-container").append("<span>La contraseña debe tener al menos 6 caracteres</span>");
+			}	
 	}
 });
 
