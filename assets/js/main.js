@@ -12,6 +12,7 @@ $(document).ready(function(){
 		//validación nombre
 		if(!/^([a-zñáéíóú]{1,11})+$/.test(name)){
 			$(".name-container").append("<span>Debe ingresar su nombre (solo caracteres de la A a la Z)</span>");
+		
 		}
 		//validación apellido
 		if(!/^([a-zñáéíóú]{1,11})+$/.test(lastName)){
@@ -29,6 +30,18 @@ $(document).ready(function(){
 		if(bike[0].selectedIndex == 0){
 		$(".bike-container").append("<span>Debes seleccionar al menos un tipo de bici</span>");
 		}
+
+		clear();
+	}
+
+	function clear(){
+		$(":input")
+		.not(":button, :submit, :reset, :hidden")
+		.val("")
+		.removeAttr("checked")
+		.prop("selectedIndex", 0);
 	}
 });
 
+
+  
