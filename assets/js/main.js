@@ -5,6 +5,7 @@ $(document).ready(function(){
 		event.preventDefault();
 		var name = $("#name").val();
 		var lastName = $("#lastname").val();
+		var email = $("#input-email").val();
 
 			//validación nombre
 			if(!/^([a-zñáéíóú]{1,11})+$/.test(name)){
@@ -13,6 +14,10 @@ $(document).ready(function(){
 			//validación apellido
 			if(!/^([a-zñáéíóú]{1,11})+$/.test(lastName)){
 				$(".lastname-container").append("<span>Debe ingresar su apellido (solo caracteres de la A a la Z)</span>");
+			}
+			//validación correo
+			if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)){
+				$(".email-container").append("<span>Verifique su email</span>");
 			}
 	}
 });
