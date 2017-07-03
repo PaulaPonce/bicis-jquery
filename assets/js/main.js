@@ -10,13 +10,13 @@ $(document).ready(function(){
 		var bike = $("select");
 
 		//validación nombre
-		if(!/^([a-zñáéíóú]{1,11})+$/.test(name)){
-			$(".name-container").append("<span>Debe ingresar su nombre (solo caracteres de la A a la Z)</span>");
+		if(!/^([A-ZÑÁÉÍÓÚ]{1}[a-zñáéíóú]{2,11})+$/.test(name)){
+			$(".name-container").append("<span>Debe ingresar su nombre (solo caracteres de la A a la Z, primera letra mayúscula)</span>");
 		
 		}
 		//validación apellido
-		if(!/^([a-zñáéíóú]{1,11})+$/.test(lastName)){
-			$(".lastname-container").append("<span>Debe ingresar su apellido (solo caracteres de la A a la Z)</span>");
+		if(!/^([A-ZÑÁÉÍÓÚ]{1}[a-zñáéíóú]{2,11})+$/.test(lastName)){
+			$(".lastname-container").append("<span>Debe ingresar su apellido (solo caracteres de la A a la Z, primera letra mayúscula)</span>");
 		}
 		//validación correo
 		if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)){
@@ -33,7 +33,7 @@ $(document).ready(function(){
 
 		clear();
 	}
-
+	//limpiar campos
 	function clear(){
 		$(":input")
 		.not(":button, :submit, :reset, :hidden")
